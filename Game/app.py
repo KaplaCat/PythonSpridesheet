@@ -30,8 +30,6 @@ if __name__ == '__main__':
             character.move(pygame.K_s, screen)
         elif(keys[pygame.K_d]):
             character.move(pygame.K_d, screen)
-        else:
-            character.idle(screen)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

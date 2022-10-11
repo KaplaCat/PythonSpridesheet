@@ -39,6 +39,7 @@ class CharacterView():
                 screen.blit(image, (self.pos_x, self.pos_y))
                 pygame.time.delay(60)
                 pygame.display.flip()
+
         if(key == pygame.K_q):
             self.direction = eSprites.LEFT
             for image in self.sprites.get_move(self.direction):
@@ -48,6 +49,7 @@ class CharacterView():
                 screen.blit(image, (self.pos_x, self.pos_y))
                 pygame.time.delay(60)
                 pygame.display.flip()
+                
         if(key == pygame.K_s):
             self.direction = eSprites.DOWN
             for image in self.sprites.get_move(self.direction):
@@ -67,16 +69,3 @@ class CharacterView():
                 screen.blit(image, (self.pos_x, self.pos_y))
                 pygame.time.delay(60)
                 pygame.display.flip()
-
-
-    def idle(self,screen:pygame.Surface):
-        if self.direction == eSprites.UP:
-            screen.blit(self.sprites.get_idle(eSprites.UP), (self.pos_x, self.pos_y))
-        elif self.direction == eSprites.DOWN:
-            screen.blit(self.sprites.get_idle(eSprites.DOWN), (self.pos_x, self.pos_y))
-        elif self.direction == eSprites.LEFT:
-            screen.blit(self.sprites.get_idle(eSprites.LEFT), (self.pos_x, self.pos_y))
-        elif self.direction == eSprites.RIGHT:
-            screen.blit(self.sprites.get_idle(eSprites.RIGHT), (self.pos_x, self.pos_y))
-        pygame.time.delay(60)
-        pygame.display.flip()
